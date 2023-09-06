@@ -24,6 +24,11 @@
 - Docker
 
 ### QuickStart
+- Клонирование репозитория
+```
+git clone git@github.com:Uzhn/hook_production_testovoe.git
+```
+
 - Переименуйте файл ```.env.example``` в ```.env```
 
 
