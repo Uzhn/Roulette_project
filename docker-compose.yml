@@ -1,0 +1,28 @@
+version: '3.9'
+
+services:
+
+  roulette_db:
+    image: postgres:15.2
+    restart: always
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+    env_file:
+      - .env
+
+  roulette_app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    restart: always
+    ports:
+      - "8000:8000"
+    depends_on:
+      - roulette_db
+    env_file:
+      - .env
+
+volumes:
+  postgres_data:
