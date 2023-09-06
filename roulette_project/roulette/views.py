@@ -20,12 +20,12 @@ class SpinRouletteView(APIView):
         try:
             result = spin_roulette(user_id)
             response_data = {
-                "message": f"Рулетка вращена, выпала ячейка: {result}",
-                "result": result,
+                'message': f'Рулетка вращена, выпала ячейка: {result}',
+                'result': result,
             }
             return Response(response_data, status=status.HTTP_200_OK)
         except Exception as err:
-            return Response({"error": str(err)}, status=status.HTTP_400_BAD_REQUEST)
+            return Response({'error': str(err)}, status=status.HTTP_400_BAD_REQUEST)
 
 
 class RouletteStatisticsView(generics.ListAPIView):
